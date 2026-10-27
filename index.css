@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    @apply bg-white text-deepink antialiased selection:bg-cobalt selection:text-white;
+    font-family: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Specific typography rules for Tamil & Hindi */
+  html[lang="ta"] body,
+  .font-tamil {
+    font-family: 'Noto Sans Tamil', 'Manrope', sans-serif !important;
+    line-height: 1.65;
+  }
+
+  html[lang="hi"] body,
+  .font-hindi {
+    font-family: 'Noto Sans Devanagari', 'Manrope', sans-serif !important;
+    line-height: 1.65;
+  }
+}
+
+/* Custom visual utility classes */
+.gradient-primary {
+  background: linear-gradient(135deg, #3457F1 0%, #8155E8 100%);
+}
+
+.gradient-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(52, 87, 241, 0.15) 0%, rgba(129, 85, 232, 0.05) 50%, transparent 100%);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(25, 26, 53, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(25, 26, 53, 0.06);
+}
+
+.shadow-subtle {
+  box-shadow: 0 4px 24px -2px rgba(25, 26, 53, 0.06), 0 2px 8px -1px rgba(25, 26, 53, 0.04);
+}
+
+.shadow-elevated {
+  box-shadow: 0 16px 36px -4px rgba(52, 87, 241, 0.14), 0 6px 16px -2px rgba(25, 26, 53, 0.06);
+}
